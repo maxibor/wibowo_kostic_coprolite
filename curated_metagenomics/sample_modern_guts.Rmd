@@ -1,0 +1,61 @@
+---
+title: "selecting human gut samples"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(curatedMetagenomicData)
+```
+
+Checking how many samples of each age_category are westernized or non westernized
+
+```{r}
+combined_metadata %>% select(c(age_category, non_westernized)) %>% table() %>% as.matrix()
+```
+
+
+Selecting randomly 100 samples of each class
+```{r}
+westernized = combined_metadata %>% filter(body_site == 'stool' & age_category != 'newborn' & non_westernized == 'no') %>% sample_n(100)
+non_westernized = combined_metadata %>% filter(body_site == 'stool' & age_category != 'newborn' & non_westernized == 'yes') %>% sample_n(100)
+```
+
+```{r}
+westernized_studies = westernized %>% select(dataset_name) %>% .[[1]] %>% paste0(".metaphlan_bugs_list.stool")
+non_westernized_studies = westernized %>% select(dataset_name) %>% .[[1]] %>% paste0(".metaphlan_bugs_list.stool")
+```
+
+
+```{r}
+esl_west = curatedMetagenomicData(westernized_studies, dryrun = FALSE, counts = TRUE)
+esl_non_west = curatedMetagenomicData(non_westernized_studies, dryrun = FALSE, counts = TRUE)
+```
+
+
+```{r}
+eset_west = mergeData(esl_west) %>% exprs()
+eset_non_west = mergeData(esl_non_west) %>% exprs()
+```
+
+```{r}
+View(head(as.data.frame(eset_west)))
+```
+
+
+```{r}
+write.csv(as.data.frame(eset_west), "westernized_count.csv")
+write.csv(as.data.frame(eset_non_west), "non_westernized_count.csv")
+write.csv(as.data.frame(westernized), "westernized_metadata.csv")
+write.csv(as.data.frame(non_westernized), "non_westernized_metadata.csv")
+```
+
+```{r}
+getwd()
+```
+
+
