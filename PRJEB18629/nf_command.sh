@@ -1,0 +1,1 @@
+nextflow run maxibor/metaphlan-nf -profile shh --reads '/projects1/users/borry/33_marsha_wibowo/sediment_data_PRJEB18629/data/*_{1,2}.fastq.gz'
