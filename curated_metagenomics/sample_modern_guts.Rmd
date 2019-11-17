@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(curatedMetagenomicData)
+set.seed(42)
 ```
 
 Checking how many samples of each age_category are westernized or non westernized
@@ -27,7 +28,7 @@ non_westernized = combined_metadata %>% filter(body_site == 'stool' & age_catego
 
 ```{r}
 westernized_studies = westernized %>% select(dataset_name) %>% .[[1]] %>% paste0(".metaphlan_bugs_list.stool")
-non_westernized_studies = westernized %>% select(dataset_name) %>% .[[1]] %>% paste0(".metaphlan_bugs_list.stool")
+non_westernized_studies = non_westernized %>% select(dataset_name) %>% .[[1]] %>% paste0(".metaphlan_bugs_list.stool")
 ```
 
 
@@ -38,20 +39,20 @@ esl_non_west = curatedMetagenomicData(non_westernized_studies, dryrun = FALSE, c
 
 
 ```{r}
-eset_west = mergeData(esl_west) %>% exprs()
-eset_non_west = mergeData(esl_non_west) %>% exprs()
+eset_west = mergeData(esl_west)
+eset_west_pdata = pData(eset_west) %>% as.tibble(rownames='rowname') %>% filter(non_westernized=='no')
+eset_west_exprs = exprs(eset_west)[,eset_west_pdata$rowname]
+eset_non_west = mergeData(esl_non_west)
+eset_non_west_pdata = pData(eset_non_west) %>% as.tibble(rownames='rowname') %>% filter(non_westernized=='yes')
+eset_non_west_exprs = exprs(eset_non_west)[,eset_non_west_pdata$rowname]
 ```
 
-```{r}
-View(head(as.data.frame(eset_west)))
-```
-
 
 ```{r}
-write.csv(as.data.frame(eset_west), "westernized_count.csv")
-write.csv(as.data.frame(eset_non_west), "non_westernized_count.csv")
-write.csv(as.data.frame(westernized), "westernized_metadata.csv")
-write.csv(as.data.frame(non_westernized), "non_westernized_metadata.csv")
+write.csv(as.data.frame(eset_west_exprs), "westernized_count.csv")
+write.csv(as.data.frame(eset_non_west_exprs), "non_westernized_count.csv")
+write.csv(as.data.frame(eset_west_pdata), "westernized_metadata.csv")
+write.csv(as.data.frame(eset_non_west_pdata), "non_westernized_metadata.csv")
 ```
 
 ```{r}
