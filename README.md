@@ -1,5 +1,7 @@
 # wibowo_kostic_coprolite
 
+## SourceTracker Analysis
+
 - Selection of curatedMetagenomics samples: [curated_metagenomics/sample_modern_guts.Rmd](curated_metagenomics/sample_modern_guts.Rmd)
 - Running metaphlan with [metaphan-nf](https://github.com/maxibor/metaphlan-nf) of [archeological soil-sediments](PRJEB18629)
 - Preparing samples for [SourceTracker2](create_st2_inputs.ipynb)
@@ -13,3 +15,10 @@ Fig 1: Phylums proportion in each sample
 
 ![](sourcetracker2/sourcetracker2_sources.png)
 Fig 2: SourceTracker source estimation
+
+## Sex Determination
+
+- [sex determination](/Users/borry/Documents/GitHub/wibowo_kostic_coprolite/sex_determination)
+
+![](sex_determination/sex_determination.png)
+Fig 3: Sex determination
