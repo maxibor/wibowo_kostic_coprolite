@@ -18,7 +18,7 @@ Fig 2: SourceTracker source estimation
 
 ## Sex Determination
 
-- [sex determination](/Users/borry/Documents/GitHub/wibowo_kostic_coprolite/sex_determination)
+- [sex determination](sex_determination)
 
 ![](sex_determination/sex_determination.png)
 Fig 3: Sex determination
