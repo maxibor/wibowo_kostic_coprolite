@@ -1,0 +1,8 @@
+/projects1/users/borry/33_marsha_wibowo/wibowo_kostic_coprolite/sourcetracker2
+mpi-cruncher7
+Sun May 31 16:18:39 CEST 2020
+Usage: sourcetracker2 gibbs [OPTIONS]
+Try 'sourcetracker2 gibbs --help' for help.
+
+Error: Invalid value for '-o' / '--output_dir': File 'wib_st2' is a directory.
+Sun May 31 16:19:37 CEST 2020

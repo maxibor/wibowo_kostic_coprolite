@@ -1,0 +1,34 @@
+/projects1/users/borry/33_marsha_wibowo/wibowo_kostic_coprolite/sourcetracker2
+mpi-cruncher7
+Sun May 31 16:27:30 CEST 2020
+Traceback (most recent call last):
+  File "/projects1/users/borry/15_miniconda3/envs/st2/bin/sourcetracker2", line 11, in <module>
+    sys.exit(cli())
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/click/core.py", line 764, in __call__
+    return self.main(*args, **kwargs)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/click/core.py", line 717, in main
+    rv = self.invoke(ctx)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/click/core.py", line 1137, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/click/core.py", line 956, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/click/core.py", line 555, in invoke
+    return callback(*args, **kwargs)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/sourcetracker/_cli/gibbs.py", line 226, in gibbs_cli
+    fig, ax = plot_heatmap(mpm)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/sourcetracker/_plot.py", line 18, in plot_heatmap
+    fig = plt.figure()
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/matplotlib/pyplot.py", line 548, in figure
+    **kwargs)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/matplotlib/backend_bases.py", line 161, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/matplotlib/backend_bases.py", line 167, in new_figure_manager_given_figure
+    canvas = cls.FigureCanvas(figure)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/matplotlib/backends/backend_qt5agg.py", line 24, in __init__
+    super(FigureCanvasQTAgg, self).__init__(figure=figure)
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/matplotlib/backends/backend_qt5.py", line 234, in __init__
+    _create_qApp()
+  File "/projects1/users/borry/15_miniconda3/envs/st2/lib/python3.5/site-packages/matplotlib/backends/backend_qt5.py", line 125, in _create_qApp
+    raise RuntimeError('Invalid DISPLAY variable')
+RuntimeError: Invalid DISPLAY variable
+Sun May 31 18:13:23 CEST 2020

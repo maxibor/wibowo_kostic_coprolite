@@ -11,6 +11,7 @@
 
 pwd; hostname; date
 
+rm -rf wib_st2
 sourcetracker2 gibbs -i /projects1/users/borry/33_marsha_wibowo/wibowo_kostic_coprolite/all_samp_st2.biom \
                      -m /projects1/users/borry/33_marsha_wibowo/wibowo_kostic_coprolite/labels_st2.tsv \
                      -o wib_st2 \
