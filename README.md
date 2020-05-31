@@ -22,3 +22,8 @@ Fig 2: SourceTracker source estimation
 
 ![](sex_determination/sex_determination.png)
 Fig 3: Sex determination
+
+## [Pydamage v0.2](https://github.com/maxibor/pydamage) results
+
+- Pydamage results, per sample: [pydamage/results]
+- Pydamage JSON file, containing ancient contigs, filtered on Qvalue (pvalue corrected for multiple hypothesis testing) < 0.05, and minimum damage > 0.05: [pydamage](ancient_contigs.json)
