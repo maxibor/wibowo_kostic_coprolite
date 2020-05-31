@@ -26,4 +26,8 @@ Fig 3: Sex determination
 ## [Pydamage v0.2](https://github.com/maxibor/pydamage) results
 
 - Pydamage results, per sample: [pydamage/results](pydamage/results)
-- Pydamage JSON file, containing ancient contigs, filtered on Qvalue (pvalue corrected for multiple hypothesis testing) < 0.05, and minimum damage > 0.05: [pydamage/ancient_contigs.json](pydamage/ancient_contigs.json)
+- Pydamage JSON file, containing ancient contigs: [pydamage/ancient_contigs.json](pydamage/ancient_contigs.json)  
+    - filtered on Qvalue (pvalue corrected for multiple hypothesis testing) < 0.05
+    - filtered  on minimum damage > 0.05
+    - filtered on contig damage on first base from 5' > mean(damage_first_base_bin) - 2*stdev(damage_first_base_bin)
+    - filtered on contig damage on first base from 5' < mean(damage_first_base_bin) + 2*stdev(damage_first_base_bin)
